@@ -12,7 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         nvim: [v0.11.4, nightly]
-    runs-on: ubuntu-latest
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }} 
     steps:
       - uses: actions/checkout@v4
       - name: Setup Neovim (${{ matrix.nvim }})
