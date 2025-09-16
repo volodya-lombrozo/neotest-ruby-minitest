@@ -16,18 +16,19 @@ M.parse = function(spec, result, _)
         return {}
     end
 
+    local err
+    success, err = os.remove(path)
+    if not success then
+        logger.warn("neotest-ruby-minitest: could not remove output file: " .. err)
+        return {}
+    end
+
     local decoded_ok, payload = pcall(vim.json.decode, output, {
         luanil = { object = true, array = true },
     })
     if not decoded_ok then
         logger.error("neotest-ruby-minitest: invalid JSON")
         return {}
-    end
-
-    local tests = payload.tests or {}
-
-    local function pos_id_for(t)
-        return t.file .. "::" .. t.class .. "::" .. t.name
     end
 
     local function classify_status(t)
@@ -53,12 +54,12 @@ M.parse = function(spec, result, _)
     end
 
     local results = {}
-
+    local tests = payload.tests or {}
     for _, t in ipairs(tests) do
-        local id = pos_id_for(t)
+        local id = t.file .. "::" .. t.class .. "::" .. t.name
         if not id then
             vim.notify("neotest-ruby-minitest: test without id", vim.log.levels.WARN)
-            return
+            return {}
         end
 
         local status = classify_status(t)

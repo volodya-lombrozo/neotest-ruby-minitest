@@ -1,0 +1,23 @@
+{
+  "summary": {
+    "total": 1,
+    "assertions": 3,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "duration": 0.015265000285580754
+  },
+  "tests": [
+    {
+      "file": "/test/factbase/terms/test_ordering.rb",
+      "line": 14,
+      "class": "TestOrdering",
+      "name": "test_prev",
+      "time": 0.00010799989104270935,
+      "assertions": 3,
+      "failures": [],
+      "skipped": null,
+      "error": false
+    }
+  ]
+}

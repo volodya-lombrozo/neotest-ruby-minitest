@@ -85,6 +85,15 @@ describe("Build Ruby Test Command", function()
             "./tests/examples/test_factbase.rb"
         }, actual.command)
     end)
+
+    async.it("should create a path for json ouput", function()
+        local unit = find(test_file, "test")
+        local actual = adapter.build({ command = "ruby" }, { tree = unit })
+        assert.no_nil(actual)
+        local json_path = actual.context.json_path
+        assert.is_string(json_path)
+        assert.is_match("%.json$", json_path)
+    end)
 end)
 
 describe("Finds Json Tap Plugin For Ruby Minitest", function()
@@ -103,4 +112,3 @@ describe("Creates State Directory", function()
         assert.is_true(vim.fn.isdirectory(state_dir) == 1)
     end)
 end)
-
