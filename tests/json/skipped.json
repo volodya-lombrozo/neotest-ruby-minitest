@@ -1,0 +1,51 @@
+{
+  "summary": {
+    "total": 1,
+    "assertions": 0,
+    "failures": 1,
+    "errors": 0,
+    "skips": 1,
+    "duration": 0.000022000051103532314
+  },
+  "tests": [
+    {
+      "file": "test/test_factbase.rb",
+      "line": 348,
+      "class": "TestFactbase",
+      "name": "test_different_properties_when_concurrent_inserts",
+      "time": 0.000022000051103532314,
+      "assertions": 0,
+      "failures": [
+        {
+          "type": "Skipped",
+          "message": "Does not work",
+          "backtrace": [
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest/assertions.rb:833:in `skip'",
+            "test/test_factbase.rb:349:in `test_different_properties_when_concurrent_inserts'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest/test.rb:94:in `block (2 levels) in run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest/test.rb:190:in `capture_exceptions'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest/test.rb:89:in `block in run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:368:in `time_it'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest/test.rb:88:in `run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-reporters-1.7.1/lib/minitest/reporters.rb:48:in `run_with_hooks'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:1208:in `run_one_method'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:447:in `run_one_method'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:434:in `block (2 levels) in run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:430:in `each'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:430:in `block in run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:472:in `on_signal'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:459:in `with_info_handler'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:429:in `run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:332:in `block in __run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:332:in `map'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:332:in `__run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:288:in `run'",
+            "/.rbenv/versions/3.3.2/lib/ruby/gems/3.3.0/gems/minitest-5.25.5/lib/minitest.rb:86:in `block in autorun'"
+          ]
+        }
+      ],
+      "skipped": true,
+      "error": false
+    }
+  ]
+}

@@ -3,6 +3,10 @@ local logger = require("neotest.logging")
 
 local M = {}
 
+-- If true, do not delete the JSON output file after reading it.
+-- Useful for debugging.
+M.keep_output = false
+
 ---@async
 ---@param spec neotest.RunSpec
 ---@param result neotest.StrategyResult
@@ -16,11 +20,13 @@ M.parse = function(spec, result, _)
         return {}
     end
 
-    local err
-    success, err = os.remove(path)
-    if not success then
-        logger.warn("neotest-ruby-minitest: could not remove output file: " .. err)
-        return {}
+    if not M.keep_output then
+        local err
+        success, err = os.remove(path)
+        if not success then
+            logger.warn("neotest-ruby-minitest: could not remove output file: " .. err)
+            return {}
+        end
     end
 
     local decoded_ok, payload = pcall(vim.json.decode, output, {
