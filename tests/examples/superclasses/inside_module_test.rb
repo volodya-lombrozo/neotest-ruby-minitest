@@ -1,7 +1,7 @@
 require "test_helper"
 
 module Admin
-  class UsersControllerTest < ActionDispatch::IntegrationTest
+  class UsersController < ActionDispatch::IntegrationTest
     def test_index
       assert true
     end
