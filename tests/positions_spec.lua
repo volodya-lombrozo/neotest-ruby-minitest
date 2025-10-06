@@ -133,15 +133,7 @@ describe("positions.discover_positions", function()
 end)
 
 describe("Discover Positions", function()
-  local is_win = package.config:sub(1, 1) == '\\'
-  local function norm(p) return vim.fs.normalize(p) end
   local function base(p) return vim.fs.basename(p) end
-  -- This is a workaround to ensure the tests work correctly on both Windows and Unix-like systems.
-  -- On Windows, neotest.lib.treesitter.parse_positions returns full file paths,
-  -- whereas on Unix-like systems, it returns only the filename.
-  local function file_name(path)
-    return is_win and norm(path) or base(path)
-  end
 
   async.it("should discover the position of the classic minitest from the 'factbase' project", function()
     local test_path = utils.resource("examples", "test_factbase.rb"):absolute()
@@ -149,7 +141,7 @@ describe("Discover Positions", function()
     local expected = {
       {
         id = test_path,
-        name = file_name(test_path),
+        name = base(test_path),
         path = test_path,
         range = { 0, 0, 65, 0 },
         type = "file",
@@ -210,7 +202,7 @@ describe("Discover Positions", function()
     local expected = {
       {
         id = test_path,
-        name = file_name(test_path),
+        name = base(test_path),
         path = test_path,
         range = { 0, 0, 10, 0 },
         type = "file",
