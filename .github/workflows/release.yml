@@ -16,9 +16,6 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: Fetch tags
-        run: git fetch --prune --tags
-
       - name: Create GitHub Release from tag message
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
