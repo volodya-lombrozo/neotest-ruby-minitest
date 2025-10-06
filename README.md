@@ -1,5 +1,9 @@
 # neotest-ruby-minitest
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Lint](https://github.com/volodya-lombrozo/neotest-ruby-minitest/actions/workflows/lint.yml/badge.svg)](https://github.com/volodya-lombrozo/neotest-ruby-minitest/actions/workflows/lint.yml)
+[![Tests](https://github.com/volodya-lombrozo/neotest-ruby-minitest/actions/workflows/test.yml/badge.svg)](https://github.com/volodya-lombrozo/neotest-ruby-minitest/actions/workflows/test.yml)
+
 A [Minitest](https://docs.seattlerb.org/minitest/) adapter for [Neotest](https://github.com/nvim-neotest/neotest).
 It’s inspired by the [neotest-minitest](https://github.com/nvim-neotest/neotest-minitest) adapter but re-implements parts of its logic to address [known issues](https://github.com/zidhuss/neotest-minitest/issues/36) — particularly compatibility problems with custom reporters — allowing you to use any reporter you prefer.
 In addition, it improves [test discovery](https://github.com/zidhuss/neotest-minitest/issues/37), resulting in more accurate detection of tests across Rails and plain Ruby projects.
